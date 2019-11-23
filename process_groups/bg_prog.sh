@@ -1,0 +1,1 @@
+while sleep 5; do echo "Program from bg prints this text every 5 seconds."; done

@@ -1,0 +1,3 @@
+Program from bg prints this text every 5 seconds.
+Program from bg prints this text every 5 seconds.
+Program from bg prints this text every 5 seconds.
