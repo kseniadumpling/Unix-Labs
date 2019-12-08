@@ -31,15 +31,16 @@ int main(void)
 		exit(1);
 	}
 	
-	printf("Enter lines of text, ^D to quit:\n");
+	printf("Enter type of queue (1 or 2) & after that type the line of text, ^D to quit:\n");
 
-	buf.mtype = 1; /* we don't really care in this case */
 
 	while(fgets(buf.mtext, sizeof buf.mtext, stdin) != NULL) {
 		int len = strlen(buf.mtext);
 
 		/* ditch newline at end, if it exists */
 		if (buf.mtext[len-1] == '\n') buf.mtext[len-1] = '\0';
+
+		buf.mtype = buf.mtext[0] - '0';
 
 		if (msgsnd(msqid, &buf, len+1, 0) == -1) /* +1 for '\0' */
 			perror("msgsnd");
